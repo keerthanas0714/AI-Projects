@@ -35,18 +35,7 @@ Each file includes:
 
 ## 🚀 Installation & Setup
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/fake-news-detection.git
-   cd fake-news-detection
-   ```
-
-2. Install dependencies:
-   ```bash
-   pip install pandas scikit-learn nltk
-   ```
-
-3. Download NLTK stopwords (first time only):
+ Download NLTK stopwords (first time only):
    ```python
    import nltk
    nltk.download('stopwords')
@@ -65,15 +54,7 @@ Each file includes:
 - Merge title and text → `content`  
 - Create `clean_text` column for training  
 
-Example preprocessing:
-```python
-def clean_text(text):
-    text = text.lower()
-    text = text.translate(str.maketrans('', '', string.punctuation))
-    words = text.split()
-    words = [stemmer.stem(word) for word in words if word not in stopwords]
-    return " ".join(words)
-```
+
 
 ---
 
@@ -82,12 +63,6 @@ def clean_text(text):
 - Split dataset (80% train, 20% test).
 - Convert text into **TF-IDF vectors**.
 - Train a **Logistic Regression** classifier.
-
-```python
-tfidf = TfidfVectorizer(max_features=500)
-X_train_tfidf = tfidf.fit_transform(X_train)
-X_test_tfidf = tfidf.transform(X_test)   # ⚠️ Use transform instead of fit_transform
-```
 
 ---
 
@@ -113,11 +88,3 @@ Accuracy Score: 0.985
 
 ---
 
-## 📌 Notes
-- Make sure to use **`tfidf.transform(X_test)` instead of `fit_transform`** on test data.  
-- You can experiment with other ML models (Naive Bayes, SVM) or deep learning methods for improvement.
-
----
-
-## 📜 License
-This project is open-source and available under the **MIT License**.

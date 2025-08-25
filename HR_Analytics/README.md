@@ -53,12 +53,12 @@ Employee attrition (resignation/turnover) can be costly and disruptive for organ
 ### 1. **Logistic Regression**
 - Simple baseline linear model
 - Accuracy: **86.05%**
-- Better recall for identifying employees who actually left
+- 
 
 ### 2. **Random Forest Classifier**
 - Ensemble model with decision trees
 - Accuracy: **82.99%**
-- Performed worse in recall for leavers (due to class imbalance)
+
 
 ---
 
@@ -71,7 +71,7 @@ Employee attrition (resignation/turnover) can be costly and disruptive for organ
 | **Precision (Leavers)** | 62%            | 36%           |
 | **F1-score (Leavers)** | 44%             | 14%           |
 
-> ⚠️ Note: The dataset is **imbalanced**, with far fewer `Attrition = Yes` records, causing lower recall in Random Forest.
+> 
 
 ---
 ## 🧾 Output Snippet

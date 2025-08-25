@@ -36,26 +36,14 @@ ham      Are we meeting tomorrow?
 ---
 
 ## 🚀 Installation & Setup
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/spam-classifier.git
-   cd spam-classifier
-   ```
-
-2. Install dependencies:
-   ```bash
-   pip install pandas scikit-learn nltk
-   ```
-
-3. Download NLTK resources (first time only):
+ Download NLTK resources (first time only):
    ```python
    import nltk
    nltk.download('punkt')
    nltk.download('stopwords')
    ```
 
-4. Place `spam_sample.csv` inside the project folder.
+
 
 ---
 
@@ -67,18 +55,6 @@ Steps applied in preprocessing:
 - Remove stopwords and punctuation  
 - Apply stemming with Porter Stemmer  
 
-Example function:
-```python
-def preprocess_text(text):
-    text = text.lower()
-    tokens = word_tokenize(text)
-    filtered_tokens = [
-        stemmer.stem(word)
-        for word in tokens
-        if word not in stop_words and word not in string.punctuation
-    ]
-    return " ".join(filtered_tokens)
-```
 
 ---
 
@@ -110,14 +86,3 @@ Classification Report:
          ham       0.99      0.99      0.99       968
         spam      0.98      0.93      0.96       162
 ```
-
----
-
-## 📌 Notes
-- You can experiment with **Logistic Regression, SVM, or Deep Learning models** for better performance.  
-- Try tuning `TfidfVectorizer` parameters (e.g., `max_features`, `ngram_range`).
-
----
-
-## 📜 License
-This project is open-source and available under the **MIT License**.
